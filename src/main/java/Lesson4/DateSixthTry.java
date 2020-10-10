@@ -1,4 +1,4 @@
-
+package Lesson4;
 import java.util.Scanner;
 
 public class DateSixthTry {
@@ -33,9 +33,26 @@ public class DateSixthTry {
     }
 
     private boolean dateOK(int monthInt, int dayInt, int yearInt) {
-        return ((monthInt >= 1) && (monthInt <= 12) &&
-                (dayInt >= 1) && (dayInt <= 31) &&
-                (yearInt >= 1000) && (yearInt <= 9999));
+        if (year < 1000 || year > 9999 || monthInt < 1 || monthInt > 12 || dayInt < 1) {
+            return false;
+        }
+
+        return day <= getDays(monthInt, yearInt);
+    }
+
+    private int getDays(int monthInt, int yearInt) {
+        int[] month = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+        int day = 0;
+        if (monthInt == 2 && leapYear(yearInt)) {
+            day = 1;
+        }
+
+        return month[monthInt] + day;
+    }
+
+    private boolean leapYear(int year) {
+        return (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0);
     }
 
     private boolean dateOK(String monthString, int dayInt, int yearInt) {
