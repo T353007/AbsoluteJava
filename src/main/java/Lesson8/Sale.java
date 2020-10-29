@@ -1,4 +1,4 @@
-
+package Lesson8;
 
 /**
  * Class for a simple sale of one item with no tax, discount, or other adjustments.

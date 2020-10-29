@@ -1,3 +1,4 @@
+package Lesson8;
 
 /**
  * Class for a sale of one item with discount expressed as a percent of the price,

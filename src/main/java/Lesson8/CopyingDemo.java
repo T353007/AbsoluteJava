@@ -1,5 +1,4 @@
-
-
+package Lesson8;
 /**
  * Demonstrates where the clone method works,
  * but copy constructors do not.
